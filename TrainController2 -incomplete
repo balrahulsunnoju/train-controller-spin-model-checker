@@ -1,0 +1,56 @@
+mtype = {Red, Green, RedState, GreenState, Idle, Waiting, Bridge}
+
+chan request = [1] of {bit}
+chan signal = [1] of {mtype}
+
+mtype ControllerState = RedState;
+mtype TrainState = Idle;
+
+proctype Controller() {
+	
+	do
+	::(ControllerState == RedState) ->
+		if 
+
+		
+		fi
+		
+	::(ControllerState == GreenState) ->
+
+	od
+}
+
+  //Correct one
+proctype Train() {
+	mtype recvd;
+	
+	do
+	::(TrainState == Idle)
+		
+	::(TrainState == Waiting) 
+		
+	::(TrainState == Bridge) 
+		
+	od
+}
+
+
+
+
+
+
+active proctype monitor() {
+	
+}
+
+
+
+
+
+init {
+	run Controller();
+	run Train();
+}
+		
+	
+
